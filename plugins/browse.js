@@ -16,7 +16,7 @@ exports.init = function(chat, client) {
             }
           });
 
-  client.addCommand("browse", function(){
+  client.addCommand("browse_last_url", function(){
                       child_process.spawn(BROWSER, [last_url]);
                       client.display.refreshLine();
                     });
