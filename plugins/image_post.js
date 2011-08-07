@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var IMAGE_DIR="/home/michael/Dropbox/Public/gifs/";
 
-imgur.setKey("6f4afb014fbbdc28dfe22b100dc56b6b");
+imgur.setKey(imgur.getKey());
 
 function uploadToImgur(fname, client, cb) {
   imgur.upload(fname,
