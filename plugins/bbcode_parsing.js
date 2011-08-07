@@ -11,6 +11,10 @@ exports.init = function(chat,client) {
       text = text.replace( /\[b\](.+?)\[\/b\]/gi, bold("$1") );
       text = text.replace( /\[i\](.+?)\[\/i\]/gi, italic("$1") );
       text = text.replace( /\[u\](.+?)\[\/u\]/gi, underline("$1") );
+
+      // URLs
+      text = text.replace(/(\b(https?|ftp|file):\/\/([^<>\"\s]+|[a-z0-9/\._\- !&\#;,%\+\?:=]+))/ig, underline("$1"));
+
       cc(text);
     });
 };
