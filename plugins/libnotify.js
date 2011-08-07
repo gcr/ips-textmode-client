@@ -10,16 +10,27 @@ function sendNotification(title, body) {
 }
 
 exports.init = function(chat,client) {
+
+  var notifyEnabled = true;
+
   chat.on('message', function(msg, username, uid, timestamp) {
             if (uid == chat.userId || !chat.settled) { return; } // ignore self
+            if (!notifyEnabled) {return;}
             sendNotification(username+":", msg);
           });
   chat.on('user_enter', function(username, uid, timestamp) {
             if (uid == chat.userId || !chat.settled) { return; } // ignore self
+            if (!notifyEnabled) {return;}
             sendNotification("Join: "+username);
           });
   chat.on('user_exit', function(username, uid, timestamp) {
             if (uid == chat.userId || !chat.settled) { return; } // ignore self
+            if (!notifyEnabled) {return;}
             sendNotification("Part: "+username);
           });
+
+  client.addCommand("notify_toggle", function(line) {
+                      notifyEnabled = !notifyEnabled;
+                      client.display.debug("Notifications are now "+(notifyEnabled?"on":"off"));
+                    });
 };

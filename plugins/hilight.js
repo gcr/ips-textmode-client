@@ -1,7 +1,7 @@
 var hilightColor=require('../lib/display_administrivia').white;
 var HILIGHTS=[
     /gcr/gi,
-    /blank/gi,
+    /blank/gi
 ];
 
 exports.init = function(chat, client) {
