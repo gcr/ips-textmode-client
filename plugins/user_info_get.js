@@ -60,7 +60,7 @@ exports.init = function(chat, client){
           });
         client.display.refreshLine();
       } else {
-        client.display.debug("User "+line+" not in chat.");
+        client.display.debug("No info on "+line+" (we only get info if they joined during your session)");
       }
     });
 
@@ -77,8 +77,8 @@ exports.init = function(chat, client){
           });
         client.display.refreshLine();
       } else {
-        client.display.debug("User " + line + " not in chat.");
-      }
+        client.display.debug("No info on "+line+" (we only get info if they joined during your session)");
+    }
     });
 
 };

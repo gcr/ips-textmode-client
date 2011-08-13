@@ -27,7 +27,7 @@ exports.init = function(chat,client) {
       if (verbatim) { return cc(msg); }
       cc(msg
          .replace(/\*(.+?)\*/gi, "[b]$1[/b]")
-         .replace(/\/(.+?)\//gi, "[i]$1[/i]")
+         //.replace(/\/(.+?)\//gi, "[i]$1[/i]")
          .replace(/\_(.+?)\_/gi, "[u]$1[/u]")
       );
     });

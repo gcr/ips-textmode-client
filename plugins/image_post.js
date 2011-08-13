@@ -19,7 +19,8 @@ function uploadToImgur(fname, client, cb) {
                });
 };
 
-function buildCraftedLink(style) {
+function buildCraftedLink(style,content) {
+  content = content || "__A__nbsp;";
   // This is where the real magic happens. ;)
   //
   // Take a look at line 2288 of ips.chat.js linked above.
@@ -43,7 +44,7 @@ function buildCraftedLink(style) {
       css+=k+":"+style[k]+";";
     }
   }
-  return "[url__E__#%2527style__E__%2527"+css+"]__A__nbsp;[/url]";
+  return "[url__E__#%2527style__E__%2527"+css+"]"+content+"[/url]";
   //chat.say("[url__E__#%2527 style__E__%2527display:block;width:586px;height:147px;background-image: url("+line+");]  [/url]", function(){}, false);
 }
 
@@ -51,15 +52,34 @@ function buildCraftedLink(style) {
 function buildImageForge(imageUrl, width, height) {
   return buildCraftedLink({
                             "text-decoration": "none",
-                            display:'block',
+                            display:'inline-block',
                             width:width+"px",
                             height:height+"px",
                             "background-image":"url("+imageUrl+")"
                           });
 }
 
+function buildColor(color,content) {
+  return buildCraftedLink({
+                            "text-decoration": "none",
+                            "color": color,
+                            "background-image":"url(http://)"
+                          }, content);
+}
 
 exports.init  = function(chat,client) {
+  client.addCommand("color", function(line) {
+                      var words = line.split(" ");
+                      var color = words[0];
+                      var rest = words.slice(1).join(" ");
+                      chat.say(buildColor(color,rest), function(){}, false);
+                    });
+
+  client.addCommand("lord_english", function(line) {
+                      line = line.replace(/lord/gi, "L"+buildImageForge("http://goo.gl/WYRQc",10,10)+"rd");
+                      chat.say(line, function(){}, false);
+                    });
+
   client.addCommand("image_post", function(line) {
                       // THIS WORKS.
                       client.display.debug("Uploading "+line+" to imgur...");
