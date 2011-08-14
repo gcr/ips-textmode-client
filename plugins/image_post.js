@@ -11,6 +11,7 @@ function uploadToImgur(fname, client, cb) {
                  if (!response.success) {
                    client.display.debug("Upload failed: "+response.file+" "+response.error);
                    if (response.rate) {
+                     console.log(response);
                      client.display.debug("Upload credits left: "+(response.rate.remaining));
                    }
                  } else {
