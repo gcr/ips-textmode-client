@@ -35,9 +35,9 @@ exports.init = function(chat,client) {
             sendNotification("Part: "+username);
           });
 
-  client.addCommand("notify_enabled", function(line) {
+  client.addCommand("notify_all", function(line) {
                       notifyEnabled = true;
-                      client.display.debug("Notifications are now on");
+                      client.display.debug("Notifications are now always on");
                     });
   client.addCommand("notify_disabled", function(line) {
                       notifyEnabled = false;
