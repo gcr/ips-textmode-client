@@ -1,4 +1,4 @@
-var hilightColor=require('../lib/display_administrivia').white;
+var hilightColor=require('../lib/display_administrivia').invert;
 var HILIGHTS=[
     /gcr/gi,
     /blank/gi
