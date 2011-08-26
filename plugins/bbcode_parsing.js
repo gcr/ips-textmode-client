@@ -32,10 +32,14 @@ exports.init = function(chat,client) {
       );
     });
 
-  client.addCommand("verbatim",
-                    function() {
-                      verbatim = !verbatim;
-                      client.display.debug("Message sending: "+
-                                           (verbatim?"verbatim":"converted to bbcode"));
+  client.addCommand("say",
+                    function(line) {
+                      chat.say(line);
+                      client.display.refreshLine();
+                    });
+  client.addCommand("me",
+                    function(line) {
+                      chat.say("/me "+line);
+                      client.display.refreshLine();
                     });
 };
