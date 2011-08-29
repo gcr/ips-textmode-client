@@ -28,7 +28,7 @@ exports.init = function(chat,client) {
       cc(msg
          .replace(/\*\*(.+?)\*\*/gi, "[b]$1[/b]")
          //.replace(/\/(.+?)\//gi, "[i]$1[/i]")
-         .replace(/\_(.+?)\_/gi, "[u]$1[/u]")
+         //.replace(/\_(.+?)\_/gi, "[u]$1[/u]")
       );
     });
 

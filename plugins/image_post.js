@@ -69,19 +69,33 @@ function buildColor(color,content) {
 }
 
 exports.init  = function(chat,client) {
+  // these two commands don't really belong here
   client.addCommand("color", function(line) {
                       var words = line.split(" ");
                       var color = words[0];
                       var rest = words.slice(1).join(" ");
                       chat.say(buildColor(color,rest), function(){}, false);
                     });
-
   client.addCommand("lord_english", function(line) {
                       line = line.replace(/lord/gi, "L"+buildImageForge("http://goo.gl/WYRQc",10,10)+"rd");
                       chat.say(line, function(){}, false);
                     });
 
-  client.addCommand("image_post", function(line) {
+  client.addCommand("image_post_from_url", function(line) {
+                      // THIS WORKS.
+                      var words = line.split(" ");
+                      var width = words.shift();
+                      var height = words.shift();
+                      var url = words.join(" ");
+                      if (width=="" || height=="" || url=="") {
+                        client.display.debug("Invalid parameters");
+                        return;
+                      }
+                      chat.say(buildImageForge(url,width,height),
+                               function(){},
+                               false);
+                    });
+  client.addCommand("image_upload", function(line) {
                       // THIS WORKS.
                       client.display.debug("Uploading "+line+" to imgur...");
                       uploadToImgur(line, client, function(r,w,h) {
