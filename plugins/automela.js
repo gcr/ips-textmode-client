@@ -5,12 +5,17 @@ exports.init = function(chat,client) {
 
   client.addMessageHook(
     function(msg, send){
-      var newMessage = npartition(msg, " !@#$%^&*(){}[]+=\|?/-'\"<>.,")
+      var newMessage = npartition(msg, " !@#$%^&*(){}[]+=\|?-'\"<>.,")
         .map(function(word) {
-               // Reject URLs
-               if (word.match(/(\b(https?|ftp|file):\/\/([^<>\"\s]+|[a-z0-9/\._\- !&\#;,%\+\?:=]+))/ig)) {
+               // Don't mess with URLs
+               if (word.match(/(\b(https?|ftp|file):\/\/([^<>\"\s]+|[a-z0-9/\._\- !&\#;,%\+\?:=]+))/ig))
                  return word;
-               }
+
+               if (word == "HI")
+                 word = "HAI";
+
+               if (word == "Hi")
+                 word = "Hai";
 
                if (word.toUpperCase() == word && word != 'I')
                  word = word.replace(/I/g, "i");
@@ -18,14 +23,11 @@ exports.init = function(chat,client) {
                if (word.toUpperCase() == "XD")
                  word = ":p";
 
-               // if (word == "):" || word == ";_;")
-               //   word = "]:";
+               if (word == ":/")
+                 word = "]:";
 
                if (word.toLowerCase() == "oh")
                  word = Math.random()>0.5? "oooh" : "ooh";
-
-               if (word.toLowerCase() == "hi")
-                 word = (word=="HI")? "HAI":"Hai";
 
                if (word.toLowerCase() == "because")
                  word = "'cause";
