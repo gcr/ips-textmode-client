@@ -7,33 +7,46 @@ exports.init = function(chat,client) {
     function(msg, send){
       var newMessage = npartition(msg, " !@#$%^&*(){}[]+=\|?-'\"<>.,")
         .map(function(word) {
+               if (word.length == 0)
+                 return word;
+
+               var uppercase = (word == word.toUpperCase());
+               var capitalized = (word[0] == word[0].toUpperCase());
+               var lowercase_word = word.toLowerCase();
+
                // Don't mess with URLs
                if (word.match(/(\b(https?|ftp|file):\/\/([^<>\"\s]+|[a-z0-9/\._\- !&\#;,%\+\?:=]+))/ig))
                  return word;
 
-               if (word == "HI")
-                 word = "HAI";
+               if (lowercase_word == "hi")
+                 word = (uppercase?     "HAI"
+                         : capitalized? "Hai"
+                         :              "hi");
 
-               if (word == "Hi")
-                 word = "Hai";
-
-               if (word.toUpperCase() == word && word != 'I')
+               if (uppercase && word != 'I')
                  word = word.replace(/I/g, "i");
 
-               if (word.toUpperCase() == "XD")
+               if (lowercase_word =="xd")
                  word = ":p";
 
-               if (word == ":/")
+               if (lowercase_word == ":/")
                  word = "]:";
 
-               if (word.toLowerCase() == "oh")
-                 word = Math.random()>0.5? "oooh" : "ooh";
+               if (lowercase_word == "oh")
+                 word = (uppercase?     (Math.random()>0.5? "OOOH" : "OOH")
+                         : capitalized? (Math.random()>0.5? "Oooh" : "Ooh")
+                         :              (Math.random()>0.5? "oooh" : "ooh"));
 
-               if (word.toLowerCase() == "because")
-                 word = "'cause";
+               if (lowercase_word == "because")
+                 word = (uppercase?     "'CAUSE"
+                         : capitalized? "'Cause"
+                         :              "'cause");
 
-               if (word.toLowerCase() == "with")
-                 word = "w/";
+               if (lowercase_word == "with")
+                 word = (capitalized? "W/" : "w/");
+
+               if (word == "JUST")
+                 word = "jUST";
 
 
 
