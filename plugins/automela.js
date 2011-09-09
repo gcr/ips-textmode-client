@@ -28,10 +28,12 @@ exports.init = function(chat,client) {
       // convincingly similar articulation to Elamind with little to
       // no effort.
 
+      // Split each word by punctuation
       var newMessage = npartition(msg, " !@#$%^&*(){}[]+=\|?-'\"<>.,")
         .map(function(word) {
+               // Do things to each word
 
-
+               // Ignore empty words
                if (word.length == 0)
                  return word;
 
@@ -43,7 +45,7 @@ exports.init = function(chat,client) {
                if (word.match(/(\b(https?|ftp|file):\/\/([^<>\"\s]+|[a-z0-9/\._\- !&\#;,%\+\?:=]+))/ig))
                  return word;
 
-               // Greetings and salutations
+               // Greetings
                if (lowercase_word == "hi")
                  word = (uppercased?    "HAI"
                          : capitalized? "Hai"
