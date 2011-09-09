@@ -47,7 +47,7 @@ exports.init = function(chat,client) {
                if (lowercase_word == "hi")
                  word = (uppercased?    "HAI"
                          : capitalized? "Hai"
-                         :              "hi");
+                         :              "hai");
 
                // CAPiTALiZE PROPERLY
                if (uppercased && word != 'I')
