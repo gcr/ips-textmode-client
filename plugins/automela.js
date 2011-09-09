@@ -77,8 +77,8 @@ exports.init = function(chat,client) {
                if (word == "JUST")
                  word = "jUST";
 
-               if (word == "BYE")
-                 word = (Math.random()>0.5? "BYE" : "BAi");
+               if (word == "Bye")
+                 word = (Math.random()>0.5? "Bye" : "Bai");
 
 
 
