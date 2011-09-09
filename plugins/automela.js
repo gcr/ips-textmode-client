@@ -7,7 +7,7 @@ exports.init = function(chat,client) {
       // This function changes each word we send into something else.
       //
       // Elamind has a few very distinct typing quirks that are often
-      // hard to emulate wfhen speed is desired. Unfortunately, the
+      // hard to emulate when speed is desired. Unfortunately, the
       // details of her particular characteristics can be easily
       // forgotten. Because consistency is key in any serious compaign
       // of comprehensive linguistic imitation, this script is my
