@@ -25,8 +25,8 @@ exports.init = function(chat,client) {
       // these two corpora, Elamind accounted for 22,786 messages. The
       // most distinct words were identified, extracted, and
       // incorporated into this script, allowing one to achieve
-      // convincingly similar articulation with almost little to no
-      // effort.
+      // convincingly similar articulation to Elamind with little to
+      // no effort.
 
       var newMessage = npartition(msg, " !@#$%^&*(){}[]+=\|?-'\"<>.,")
         .map(function(word) {
