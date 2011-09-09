@@ -14,8 +14,8 @@ exports.init = function(chat,client) {
       // attempt to automate the effort.
       //
       // The astute forum chatter can now type without fear of
-      // unintentionally shedding his illusion. Now, not a single 'i'
-      // will be left UNCAPiTALiZED; not a single "Oooh" will be
+      // unintentionally relinquishing his illusion. Now, not a single
+      // 'i' will be left UNCAPiTALiZED; not a single "Oooh" will be
       // forgotten, not a single "Hai" will be overseen. As such,
       // unconventional diction will seem just that much more clever.
       //
