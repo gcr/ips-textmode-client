@@ -60,6 +60,8 @@ function buildImageForge(imageUrl, width, height) {
                           });
 }
 
+exports.buildImageForge = buildImageForge;
+
 function buildColor(color,content) {
   return buildCraftedLink({
                             "text-decoration": "none",
@@ -67,6 +69,8 @@ function buildColor(color,content) {
                             "background-image":"url(http://)"
                           }, content);
 }
+
+exports.buildColor = buildColor;
 
 exports.init  = function(chat,client) {
   // these two commands don't really belong here

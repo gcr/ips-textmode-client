@@ -1,11 +1,11 @@
 /*
  * main.js -- run this file with node
  */
-var ipschat = require('./ips/ipschat'),
+var ipschat = require('ips-chat').ipschat,
     chatclient = require('./lib/client'),
     fs = require('fs'),
     path = require('path'),
-    ips = require('./ips/ips'),
+    ips = require('ips-chat').ips,
 
     stdin = process.openStdin(),
     stdout = process.stdout,

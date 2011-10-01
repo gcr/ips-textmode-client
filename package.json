@@ -1,0 +1,19 @@
+{
+  "author": "gcr <gcr@sneakygcr.net>",
+  "name": "ips-client",
+  "description": "A textmode chat client for board.iamlights.com",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gcr/ips-textmode-client.git"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "dependencies": {
+    "imgur": "~0.0.1",
+    "xml2js": "~0.1.9",
+    "ips-chat": "*"
+  },
+  "devDependencies": {}
+}
