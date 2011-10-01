@@ -83,7 +83,7 @@ exports.init  = function(chat,client) {
 
   client.addCommand("image_post_from_url", function(line) {
                       // THIS WORKS.
-                      var words = line.split(" ");
+                      var words = line.replace(/  /g, " ").split(" ");
                       var width = words.shift();
                       var height = words.shift();
                       var url = words.join(" ");

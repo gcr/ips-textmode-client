@@ -62,11 +62,11 @@ exports.init = function(chat,client) {
                if (lowercase_word == ":/")
                  word = "]:";
 
-               // Oooh!
-               if (lowercase_word == "oh")
-                 word = (uppercased?    (Math.random()>0.5? "OOOH" : "OOH")
-                         : capitalized? (Math.random()>0.5? "Oooh" : "Ooh")
-                         :              (Math.random()>0.5? "oooh" : "ooh"));
+               // // Oooh!
+               // if (lowercase_word == "oh")
+               //   word = (uppercased?    (Math.random()>0.5? "OOOH" : "OOH")
+               //           : capitalized? (Math.random()>0.5? "Oooh" : "Ooh")
+               //           :              (Math.random()>0.5? "oooh" : "ooh"));
 
                if (lowercase_word == "because")
                  word = (uppercased?    "'CAUSE"

@@ -1,7 +1,7 @@
 var xml2js = require('xml2js');
 var child_process = require('child_process');
 
-var BROWSER = "chromium-browser";
+var BROWSER = "chromium";
 
 exports.init = function(chat, client){
 
