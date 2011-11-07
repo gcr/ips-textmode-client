@@ -1,7 +1,7 @@
 var xml2js = require('xml2js');
 var child_process = require('child_process');
 
-var BROWSER = "chromium";
+var BROWSER = "luakit";
 
 exports.init = function(chat, client){
 

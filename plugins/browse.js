@@ -1,5 +1,5 @@
 var child_process = require('child_process');
-var BROWSER="chromium";
+var BROWSER="luakit";
 
 exports.init = function(chat, client) {
 
