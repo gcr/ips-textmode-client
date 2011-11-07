@@ -92,7 +92,7 @@ exports.init  = function(chat,client) {
                       var height = words.shift();
                       var url = words.join(" ");
                       if (width=="" || height=="" || url=="") {
-                        client.display.debug("Invalid parameters");
+                        client.display.debug("Usage: /image_post_from_url [width] [height] [url]");
                         return;
                       }
                       chat.say(buildImageForge(url,width,height),
