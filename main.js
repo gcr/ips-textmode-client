@@ -9,7 +9,7 @@ var ipschat = require('ips-chat').ipschat,
 
     stdin = process.openStdin(),
     stdout = process.stdout,
-    stdio = process.binding("stdio"),
+    stdio = require('tty'),
 
     PLUGIN_DIR="plugins";
 
